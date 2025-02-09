@@ -1,0 +1,36 @@
+{% extends 'prntdes.html' %}
+{% block head %}
+<title>View Child</title>
+
+{% endblock %}
+{% block gal %}
+{% endblock %}
+{% block main %}
+<body>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 p-4 mt-2" style="background-color: rgba(240, 248, 255, 0.663);">
+            <h1>Child / Children Details</h1>
+            <table class="table table-dark">
+                <tr>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Age</td>
+                    <td>Blood Group</td>
+                    <td>Action</td>
+                </tr>
+                {% for i in data %}
+                <tr>
+                    <td>{{ i.fname }}</td>
+                    <td>{{ i.lname }}</td>
+                    <td>{{ i.age }} years</td>
+                    <td>{{ i.blood_group }}</td>
+                    <td><a href="/childedit/{{ i.id }}" class="btn btn-success">Edit</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="col-1 mt-5"><a href="/cdesn" class="btn btn-primary">Add Child</a></div>
+    </div>
+</body>
+{% endblock main %}
