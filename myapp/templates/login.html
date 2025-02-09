@@ -1,0 +1,62 @@
+{% extends 'main_nav.html' %}
+{% load static %}
+{% block head %}
+<title>Log in</title>
+ <style>
+    td {
+        padding: 5px;
+    }
+
+    form {
+        background-color: rgba(105, 211, 134, 0.221);
+        
+        border-radius: 5%;
+        box-shadow: 5px 10px rgb(6, 70, 24);
+        padding-left: 7px;
+         }
+    .qw{
+    margin-top: 100px;
+
+
+    }
+
+
+</style> 
+
+
+{% endblock %}
+{% block main1 %}
+
+<body style="background-image: url({% static 'images/IMG123.jpg' %});background-size:cover;background-repeat:no-repeat">
+    {% endblock %}
+    {% block main %}
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-3">
+        <form action=""method='POST' class="form qw pt-5 pb-5">
+            {% csrf_token %}
+            <table>
+                <tr><td colspan="2" class="text-center"><h3>LOGIN</h3></td></tr>
+
+                {% if msg %}
+                <tr>
+                    <td colspan="2"> {{ msg }} </td>
+                </tr>
+                {% endif %}
+    
+                <tr>
+                    <td><label for="username" class="form-label">Username</label></td>
+                    <td><input type="text" name="username" placeholder="Enter Your Username" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td><label for="password" class="form-label">Password</label></td>
+                    <td><input type="password" name="password" placeholder="Enter your Password" class="form-control"></td>
+                </tr>
+                <tr><td colspan="2" class="text-center pt-4"><input type="submit" value="Login" class="btn btn-primary"></td></tr>
+            </table></div>
+    <div class="col-5"></div>
+</div>
+
+    </form>
+    
+    {% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'addes.html' %}
+{% block head %}
+<title>caretaker edits</title>
+
+{% endblock %}
+{% block main %}
+<div class="row">
+<div class="col"></div>
+<div class="col">
+    <h1 class="text-center"><u><i><b>Edit Profile</b></i></u></h1>
+    <form action="" method="POST" class="bg-dark p-5 mt-5 text-light" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table table-borderless text-light">
+            <tr>
+
+                <td><label for="salary">Salary</label></td> 
+                <td><input type="text" name="salary" value="{{data.salary}}" id="" class="form-control"></td>
+            </tr>
+      
+            <tr><td colspan="2" class="text-center"><input type="submit" value="update" class="btn btn-primary" name="" id=""></td></tr>
+    
+        </table>
+    </form>
+</div>
+<div class="col"></div>
+</div>
+
+{% endblock %}

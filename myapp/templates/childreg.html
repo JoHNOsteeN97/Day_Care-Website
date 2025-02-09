@@ -1,0 +1,62 @@
+{% extends 'prntdes.html' %}
+{% block head %}
+<title>Add Child</title>
+
+{% endblock %}
+{% block gal %}
+{% endblock %}
+{% block main %}
+<body>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <form action="" method="POST" class="bg p-5 mt-2 text-light" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table class="table table-borderless text-light">
+                    <tr>
+                        <td><label for="fname">First Name</label></td>
+                        <td><input type="text" name='fname' placeholder="enter the first name" class="form-control"></td>
+                    </tr>
+        
+                    <tr>
+                        <td><label for="lname">Last Name</label></td>
+                        <td><input type="text" name='lname' placeholder="enter the last name" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="age">Age</label></td>
+                        <!-- <td><input type="text" name='age' placeholder="enter your Age" class="form-control"></td> -->
+                        <td><select name="age" id="" class="form-control">
+                            <option value="" disabled selected>Select Age Group</option>
+                            {% for i in data %}
+                                <option value="{{i}}">{{i}} years old</option>
+                            {% endfor %}
+                        </select></td>
+        
+                    </tr>
+        
+                    <tr>
+                        <td><label for="blood_group">Blood Group</label></td>
+                        <td><input type="text" name='blood_group' placeholder="Blood Group" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="medical_condition">Medical condition</label></td>
+                        <td><textarea name="medical_condition" id="" cols="30" rows="10" placeholder="Enter your Query" class="form-control"></textarea></td>
+                    </tr>
+                    <tr>
+                 
+                    <tr>
+                        <td colspan="2" class="text-center pt-4"><input type="submit" value="Save Child Details" class="btn btn-primary">
+                        </td>
+                    </tr>
+        
+                </table>
+        
+        
+            </form>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</body>
+{% endblock main %}
+
+</html>
